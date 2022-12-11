@@ -5,9 +5,10 @@
 \usepackage[utf8]{inputenc}
 \usepackage{setspace}
 \usepackage{cite}
+\usepackage{graphicx}
+\usepackage{float}
 
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%% DO NOT CHANGE %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \setlength{\marginparwidth}{0pt}
 \setlength{\marginparsep}{0pt} 
@@ -174,19 +175,129 @@ Please see Appendix A for the complete questionnaire.
 \section*{Experimental Result}\
 
 \subsection*{Tooling}
-
 The numerical analysis stack from Python is used to conduct analysis on the results we collected from the questionnaire. The stack includes Pandas, which is used in storing and manipulating tabular data, Matplotlib, which is used for graphing, and Jupyter Notebook, which is used for presentation.
 
 \subsection*{Analysis process breakdown}
-Download questionnaire results from the Google forms in csv format
-Read csv file in and create a Pandas dataframe from that
-Do some data cleaning
-Interpret the results into numerical values, according to the rules outlined in the Question Scoring section
-Calculate total and mean columns
-Perform group by function between different demographics groups
-Plot the resultant table in a bar graph and present it
+\begin{enumerate}
+  \item Download questionnaire results from the Google forms in csv format
+  \item Read csv file in and create a Pandas dataframe from that
+  \item Do some data cleaning
+  \item Interpret the results into numerical values, according to the rules outlined in the Question Scoring section
+  \item Calculate total and mean columns
+  \item Perform group by function between different demographics groups
+  \item Plot the resultant table in a bar graph and present it
+\end{enumerate}
 
 \subsection*{Analysis types}
+There are two types of analysis that have been performed: vertical and horizontal analysis. \\
+Vertical analysis:
+
+Pick out an independent variable, such as mental health or work environment,  and look at it independently across different demographics groups to see how this particular factor differs.
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=1]{vertical.png}
+    \label{vertical}
+\end{figure} \\
+Horizontal analysis:
+
+Pick out an individual demographic group, such as sex or career field, and look at the differences between all the factors for that particular group across the board.
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=1]{horizontal.png}
+    \label{horizontal}
+\end{figure} \\
+
+\section*{Findings and discussions}
+
+\subsection*{Unhappy Asia}
+
+Here’s the overall happiness score compare between Asian and Europe.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=1]{asia.png}
+    \label{asia}
+\end{figure} \\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=1]{europe.png}
+    \label{europe}
+\end{figure} 
+
+People who work in the Asian continent scored slightly lower (difference of $< 1.0$)  in multiple categories, including self leadership, mental health, work environment, time, training and career development, and process and support. Asia scored significantly lower (difference of $\geq 1.0$) in the pay and tooling categories. 
+
+A number of countries with high population density are known for their high intensive work schedules. The rule of 996 is commonly employed across China, which means a work week of 9am to 9pm, Monday to Saturday for six work days a week. South Korea is known for having one of the highest suicide rates due to work stress out of all the developed countries in the world. \cite{suiciderate2022}
+
+The change to remote work did not seem to have changed the work condition by much for people in Asia, as they are overworked, less supported and underpaid.
+
+\subsection*{Kids and marriage}
+
+There’s a slight dip in mental health happiness between people who have kids and people who do not. There’s a bigger dip in mental health between married workers versus single or workers in the “Others” category, which can be assumed to be either divorced or in common law.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=1]{kids.png}
+    \label{kids}
+\end{figure} \\
+
+Families with kids find that their mental health is impacted more. One possible cause of this is that kids, especially young ones, tend to serve as a distraction in their work environment, which will potentially lead to a higher level of stress. 
+
+Married workers have the highest score in the mental health category.One can argue that a married worker can find more sense of safety and comfort in their relatively stable relationship status. 
+
+In summary of the above two findings, in order to achieve maximum mental health, the best combination would be to be married but have no kids.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=1]{marriage.png}
+    \label{marriage}
+\end{figure} 
+
+\subsection*{IT and marketing}
+
+Here are the overall happiness scores of IT and marketing workers across the board.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=1]{it.png}
+    \label{kids}
+\end{figure} \\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=1]{marketing.png}
+    \label{marriage}
+\end{figure} 
+
+When doing a side by side comparison between IT and marketing demographics groups, we found a significant drop (around 1.0)  in the self leadership and mental health categories from IT to marketing workers. 
+
+IT workers are capable of working in solitude for hours - chipping away at a problem, working out solutions, coding and testing. For the majority of IT workers, it doesn’t make a sizable difference whether the above tasks are performed from home or at the office. 
+
+However, marketing is all about connecting with customers and resonating with customers with the right product, price and value. The people who work in marketing have a need to establish and feel that close connection with people on a daily basis during their work routine. Therefore, when someone in marketing is forced to work in isolation at home for prolonged periods, they tend to lose the motivation and self leadership needed to perform work efficiently. The marketing workers also suffer in the mental health category due to reduced time for face to face connection with others. 
+
+\subsection*{The 46-55s group}
+
+See the following graphs for the mental health variable across different age groups, overall scores across the board for age group 26-35, and age group 46-55.
+
+There is a significant drop all across the board for the age group 46-55, particularly severe in mental health, work environment, physical health, and training and career development.
+
+The age group 46-55 falls into the demographics category of Generation X, which is also known as the worst generation. These people would have started work somewhere between late 80s to early 90s. For the past twenty to thirty years, Generation X’s days have been building on the same routine, day in day out. Therefore, this remote work change does not come easy to them.
+
+Generation X are not known to be avid adopters of technology. They prefer phone calls if remote, however face to face still remains as their premier choice of communication. Many of the workers in the age group 46-55 have only learned the minimum amount of technology required in order to stay relevant in their job field.
+
+The second factor is that the people in the age group 46-55 may currently be experiencing their midlife crisis. A good number of them are married with kids, and this is the time to pay for their post secondary tuition. Many of them are burdened with healthcare bills for their ailing parents. These are all potential stress factors in their lives, not counting the personal problems that they are currently dealing with at the moment. 
+
+Lastly, those in Generation X still have a number of years to go before retirement. Perhaps some of them are unhappy with where they are currently in the career ladder, despite only having a limited number of years left in their respective job field. 
+All the factors above combined and aggregated into this result that we are seeing in this experiment. 
+
+\section*{Bias}
+
+A number of biases exist in this experiment. The questionnaires are sent out on open forums, therefore anyone with access to the Internet has access to them and has the power to fill it out. This may invite auto survey filling bots, or speedrunners whose aims are to finish as many surveys as possible within a specific time frame instead of taking the time to provide accurate and truthful data.
+
+We also see a number of biases based on the results we have collected:
+
+This experiment is heavily biased towards IT and customer service workers.
+
 
 \bibliography{research_proposal}
 %%%%%%%%%%%%%%%%%%%%%%%%% DO NOT CHANGE %%%%%%%%%%%%%%%%%%%%%%%%%%%
